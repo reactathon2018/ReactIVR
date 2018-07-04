@@ -1,0 +1,87 @@
+<h1>Career opportunities</h1>
+<section class="insert">
+    <h3>Add Open Positions</h3>
+    <form action="/insert" method="post">
+        <div class="input">
+            <label for="title">Job Title</label>
+            <input type="text" id="title" name="title">
+        </div>
+        <div class="input">
+            <label for="content">Job Description</label>
+            <input type="text" id="content" name="content">
+        </div>
+        <div class="input">
+            <label for="author">Contact HR</label>
+            <input type="text" id="author" name="author">
+        </div>
+        <button type="submit">SUBMIT</button>
+    </form>
+</section>
+<section class="get">
+    <h3>View Open Positions</h3>
+    <a href="/get-data"><B>Click here to view open positions</B></a>
+    <div>
+        {{# each items }}
+            <article class="item">
+                <div>Job Title: {{ this.title }}</div>
+                <div>Job Description: {{ this.content }}</div>
+                <div>Contact HR: {{ this.author }}</div>
+                <div>JOB ID: {{ this._id }}</div>
+            </article>
+        {{/each}}
+    </div>
+</section>
+
+<section class="update">
+    <h3>Update Job Details</h3>
+    <form action="/update" method="post">
+        <div class="input">
+            <label for="id">JOB ID</label>
+            <input type="text" id="id" name="id">
+        </div>
+        <div class="input">
+            <label for="title">Job Title</label>
+            <input type="text" id="title" name="title">
+        </div>
+        <div class="input">
+            <label for="content">Job Description</label>
+            <input type="text" id="content" name="content">
+        </div>
+        <div class="input">
+            <label for="author">Contact HR</label>
+            <input type="text" id="author" name="author">
+        </div>
+         <button type="submit" onClick="history.go(-1)" >UPDATE JOB INFO</button>
+    </form>
+</section>
+</section>
+<section class="delete">
+    <h3>Delete Job Details</h3>
+    <form action="/delete" method="post">
+        <div class="input">
+            <label for="id">JOB ID</label>
+            <input type="text" id="id" name="id">
+        </div>
+        <button type="submit">DELETE JOB</button>
+    </form>
+</section>
+<section class="uploadFile">
+<h3>Upload Documents</h3>
+<script type="text/JavaScript">
+        function showMessage(){
+		document.getElementById("form1").submit();
+		display_message.innerHTML= "document uploaded success";
+		document.getElementById("file").value="";
+		    //var message = document.getElementById("message").value;
+			
+           
+        }
+    </script>
+<form id="form1" action "/upload" method="post" enctype="multipart/form-data">
+Select the document to upload: <input type="file" id="file" name="myimage" ></input>
+<input type="button" onclick="showMessage()" value="submit" />
+</form>
+<p> Status: <span id = "display_message"></span> </p>
+</section>
+
+

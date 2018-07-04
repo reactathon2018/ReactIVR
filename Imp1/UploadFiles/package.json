@@ -1,0 +1,19 @@
+{
+  "name": "my-nodejs-api",
+  "version": "1.0.0",
+  "description": "simple api app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
+  },
+  "dependencies": {
+    "body-parser": "*",
+    "ejs": "^2.6.1",
+    "express": "*",
+    "mongoose": "*",
+    "multer": "*",
+    "path": "*"
+  },
+  "author": "Kamran Athar",
+  "license": "ISC"
+}

@@ -1,0 +1,45 @@
+<!--<html>
+<head>
+ <title>test</title>
+</head>
+<body>
+<form action "/" method="POST" enctype="multipart/form-data" >
+ <input type="file" id="file" name="myimage" ></input>
+ <input type="submit" name="submit" value="submit" ></input>
+ 
+
+</form>
+<script>
+function myFunction() {
+    document.getElementById("file").value = "";
+	alert('File uploaded successfully');
+}
+</script>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML JavaScript output on same page</title>
+    <script type="text/JavaScript">
+        function showMessage(){
+		document.getElementById("form1").submit();
+		display_message.innerHTML= "document uploaded success";
+		document.getElementById("file").value="";
+		    //var message = document.getElementById("message").value;
+			
+           
+        }
+    </script>
+</head>
+<body>
+<form id="form1" action "/" method="POST" enctype="multipart/form-data">
+Enter message: <input type="file" id="file" name="myimage" ></input>
+<input type="button" onclick="showMessage()" value="submit" />
+</form>
+<p> Message is: <span id = "display_message"></span> </p>
+</body>
+</html>
+
+
+
